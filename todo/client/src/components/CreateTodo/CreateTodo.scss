@@ -1,0 +1,62 @@
+// CreateTodo.scss
+.container {
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding-top: 20px;
+
+    .username{
+        display: flex;
+        justify-content: center;
+        text-transform: capitalize;
+    }
+
+    .no__user{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 72px;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 0px;
+    outline: none;
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 2px;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.create__btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-left: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.create__btn:hover {
+    background-color: #0056b3;
+}

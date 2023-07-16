@@ -1,0 +1,37 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #292929, #1c1c1c);
+
+    h1 {
+        color: #f1f1f1;
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .todo-card {
+        background-color: #f1f1f1;
+        padding: 1rem;
+        width: 50rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+
+        .card-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+    
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}

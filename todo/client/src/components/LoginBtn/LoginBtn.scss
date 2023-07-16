@@ -1,0 +1,17 @@
+.log__container {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+
+    .logout__icon{
+        font-size: 6rem;
+        color: rgb(255, 0, 179);
+        border: none;
+    }
+
+    .login__icon{
+        font-size: 6rem;
+        color: rgb(0, 151, 113);
+        border: none;
+    }
+}
