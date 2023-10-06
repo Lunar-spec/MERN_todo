@@ -15,7 +15,7 @@ app.use(express.json());
 
 const PORT = 5000;
 
-app.use('/todos',auth, todoRoutes);
+app.use('/todos', auth, todoRoutes);
 app.use('/users', userRoutes);
 
 app.get('/', async (req, res) => {

@@ -19,8 +19,10 @@ function Registration() {
             return;
         }
 
+        // console.log(import.meta.env.VITE_BACKEND_URL)
+
         try {
-            const response = await axios.post(`${import.meta.env.BACKEND_URL}/users/reg`, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}users/reg`, {
                 username,
                 email,
                 password

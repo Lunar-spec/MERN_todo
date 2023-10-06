@@ -19,7 +19,7 @@ function CreateTodo() {
         }
 
         try {
-            await axios.post(`${import.meta.env.BACKEND_URL}/todos`, {
+            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/todos`, {
                 userId,
                 title,
                 description
