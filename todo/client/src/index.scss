@@ -7,3 +7,25 @@ body {
   overflow-x: hidden;
 }
 
+button{
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: .2rem;
+}
+
+input{
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+  color: inherit;
+  font-size: 1.2rem;
+
+  &::placeholder{
+    font-family: 'Poppins';
+  }
+}
+

@@ -35,35 +35,35 @@ function Registration() {
 
     return (
         <div className="registration-container">
-            <h2>Registration</h2>
             <form onSubmit={handleSubmit}>
+            <h2>Registration</h2>
                 <div className="form-group">
-                    <label>Username:</label>
                     <input
+                        placeholder='Username'
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
-                    <label>Email:</label>
                     <input
+                        placeholder='Email'
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
-                    <label>Password:</label>
                     <input
+                        placeholder='Password'
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
-                    <label>Confirm Password:</label>
                     <input
+                        placeholder='Confirm Password'
                         type="password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}

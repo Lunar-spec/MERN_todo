@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './Login.scss';
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
+
+import './Login.scss';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -18,12 +18,11 @@ function Login() {
                 username,
                 password,
             })
-            // //console.log(response)
             const token = response.data.token;
             localStorage.setItem('Token', token)
             localStorage.setItem('userId', response.data.user_id)
             localStorage.setItem('username', response.data.username)
-            // //console.log(response.data.username)
+            // console.log(response.data)
             navigate('/')
         } catch (error) {
             console.log(error)
@@ -32,21 +31,19 @@ function Login() {
 
     return (
         <div className="login-container">
-            <div className="background"></div>
             <div className="form-container">
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label>Username:</label>
                         <input
+                            placeholder='Username'
                             type="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                    </div>
-                    <div className="form-group">
-                        <label>Password:</label>
+
                         <input
+                            placeholder='Password'
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

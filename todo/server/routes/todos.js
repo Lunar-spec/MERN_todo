@@ -2,11 +2,10 @@ import express from "express"
 
 import Todo from "../mongodb/models/todo.js"
 import auth from "../middleware/auth.js"
-import mongoose from "mongoose"
 
 const router = express.Router()
 
-router.delete('/:id',auth, async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     const id = req.params.id;
     try {
         await Todo.findByIdAndRemove(id).exec();
@@ -16,7 +15,23 @@ router.delete('/:id',auth, async (req, res) => {
     }
 })
 
-router.post('/',auth, async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
+    const id = req.params.id;
+
+    try {
+        const { title, description } = req.body;
+        const updatedTodo = await Todo.findByIdAndUpdate(id, {
+            title, description
+        },
+            { new: true }
+        )
+        res.status(200).json(updatedTodo)
+    } catch (error) {
+        res.status(400).json({ error: 'Error updating the todo' })
+    }
+})
+
+router.post('/', auth, async (req, res) => {
     try {
         const { title, description } = req.body;
 
@@ -34,7 +49,7 @@ router.post('/',auth, async (req, res) => {
     }
 })
 
-router.get('/:userId',auth, async (req, res) => {
+router.get('/:userId', async (req, res) => {
     try {
         const userId = req.params.userId;
         const todos = await Todo.find({ userId });
