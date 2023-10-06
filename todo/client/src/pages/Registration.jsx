@@ -20,7 +20,7 @@ function Registration() {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/users/reg', {
+            const response = await axios.post(`${import.meta.env.BACKEND_URL}/users/reg`, {
                 username,
                 email,
                 password

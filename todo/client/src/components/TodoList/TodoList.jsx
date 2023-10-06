@@ -32,7 +32,7 @@ function TodoList() {
         const todoId = updatedTodo._id;
 
         try {
-            const resonse = await axios.put(`http://localhost:5000/todos/${todoId}`, updatedTodo, {
+            const resonse = await axios.put(`${import.meta.env.BACKEND_URL}/todos/${todoId}`, updatedTodo, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -59,7 +59,7 @@ function TodoList() {
         const token = localStorage.getItem('Token')
 
         try {
-            const response = await axios.get(`http://localhost:5000/todos/${userId}`, {
+            const response = await axios.get(`${import.meta.env.BACKEND_URL}/todos/${userId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -74,7 +74,7 @@ function TodoList() {
         const token = localStorage.getItem('Token')
 
         try {
-            await axios.delete(`http://localhost:5000/todos/${id}`, {
+            await axios.delete(`${import.meta.env.BACKEND_URL}/todos/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

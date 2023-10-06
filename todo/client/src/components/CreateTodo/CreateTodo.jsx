@@ -19,7 +19,7 @@ function CreateTodo() {
         }
 
         try {
-            await axios.post('http://localhost:5000/todos', {
+            await axios.post(`${import.meta.env.BACKEND_URL}/todos`, {
                 userId,
                 title,
                 description
@@ -41,24 +41,24 @@ function CreateTodo() {
     };
 
     return (
-            <div className="container">
-                <h2>Create Todo</h2>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        placeholder="Enter todo title"
-                    />
-                    <input
-                        type="text"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        placeholder="Enter description"
-                    />
-                    <button className='create__btn' type="submit">Create</button>
-                </form>
-            </div>
+        <div className="container">
+            <h2>Create Todo</h2>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Enter todo title"
+                />
+                <input
+                    type="text"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Enter description"
+                />
+                <button className='create__btn' type="submit">Create</button>
+            </form>
+        </div>
     );
 }
 
